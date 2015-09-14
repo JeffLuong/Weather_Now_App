@@ -2,7 +2,7 @@ var app = angular.module('w-Now', []);
 
 app.controller('w-NowController', ['$http', '$scope', function($http, $scope) {
 
-  this.unitDefault = "F";
+  this.temp;
   var controller = this;
 
   this.getLocation = function() {
@@ -43,7 +43,6 @@ app.controller('w-NowController', ['$http', '$scope', function($http, $scope) {
 
   this.renderCondition = function(code, hour) {
     console.log("rendering conditions");
-    // console.log(code);
     var time;
 
     if (hour >= 6 && hour <= 18) {
@@ -52,6 +51,7 @@ app.controller('w-NowController', ['$http', '$scope', function($http, $scope) {
       time = "night";
     }
 
+    // Use time to concat a string that renders the correct SVG
     if (code >= 200 && code < 300) {
       console.log("rendering", time, "thunderstorm svg...");
     } else if (code >= 300 && code < 400) {
@@ -70,13 +70,15 @@ app.controller('w-NowController', ['$http', '$scope', function($http, $scope) {
   };
 
   this.renderTemp = function(temp) {
-    // console.log("rendering Temp...temp is", temp);
+    console.log("rendering Temp...temp is", this.convertTempUnit(null, temp), "F");
   };
 
-  this.switchTempUnit = function(unit) {
-
-    if (unit !== this.unitDefault) {
-      //convert unit first in render temp? 
+  // converts from kelvin to default of F unless specified
+  this.convertTempUnit = function(unit, temp) {
+    if (unit === null || unit === undefined || unit === "F") {
+      return Math.floor(((temp - 273.15) * 1.8) + 32);
+    } else if (unit === "C") {
+      return Math.floor(temp - 273.15);
     }
   };
 
