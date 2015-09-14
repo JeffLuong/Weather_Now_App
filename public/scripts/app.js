@@ -3,6 +3,8 @@ var app = angular.module('w-Now', []);
 app.controller('w-NowController', ['$http', '$scope', function($http, $scope) {
 
   this.temp;
+  this.tempF;
+  this.tempC;
   var controller = this;
 
   this.getLocation = function() {
@@ -70,16 +72,18 @@ app.controller('w-NowController', ['$http', '$scope', function($http, $scope) {
   };
 
   this.renderTemp = function(temp) {
-    console.log("rendering Temp...temp is", this.convertTempUnit(null, temp), "F");
+    console.log("rendering Temp...");
+    this.convertTempUnit(temp);
   };
 
-  // converts from kelvin to default of F unless specified
-  this.convertTempUnit = function(unit, temp) {
-    if (unit === null || unit === undefined || unit === "F") {
-      return Math.floor(((temp - 273.15) * 1.8) + 32);
-    } else if (unit === "C") {
-      return Math.floor(temp - 273.15);
-    }
+  this.convertTempUnit = function(temp) {
+    this.tempF = Math.floor(((temp - 273.15) * 1.8) + 32);
+    this.tempC = Math.floor(temp - 273.15);
+    // if (unit === null || unit === undefined || unit === "F") {
+    //   return Math.floor(((temp - 273.15) * 1.8) + 32);
+    // } else if (unit === "C") {
+    //   return Math.floor(temp - 273.15);
+    // }
   };
 
   this.getLocation();
