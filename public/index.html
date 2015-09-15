@@ -13,6 +13,7 @@
     <script type="text/javascript" src="scripts/app.js"></script>
 
     <!-- CSS -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
   </head>
 
@@ -21,7 +22,9 @@
 
     </div>
     <div class="temp-display">
-      <h2 ng-bind="now.tempF"></h2>
+      <div ng-click="now.toggleTemp('F')">F</div>
+      <div ng-click="now.toggleTemp('C')">C</div>
+      <div ng-bind="now.currTemp"></div>
     </div>
     <div class="temp-toggle">
 

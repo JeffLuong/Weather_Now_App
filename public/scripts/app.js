@@ -5,6 +5,8 @@ app.controller('w-NowController', ['$http', '$scope', function($http, $scope) {
   this.temp;
   this.tempF;
   this.tempC;
+  this.currTemp;
+
   var controller = this;
 
   this.getLocation = function() {
@@ -40,7 +42,7 @@ app.controller('w-NowController', ['$http', '$scope', function($http, $scope) {
 
   this.renderElems = function(code, temp, hour) {
     this.renderCondition(code, hour);
-    this.renderTemp(temp);
+    this.convertTempUnit(temp);
   };
 
   this.renderCondition = function(code, hour) {
@@ -71,20 +73,24 @@ app.controller('w-NowController', ['$http', '$scope', function($http, $scope) {
     }
   };
 
-  this.renderTemp = function(temp) {
-    console.log("rendering Temp...");
-    this.convertTempUnit(temp);
-  };
-
   this.convertTempUnit = function(temp) {
     this.tempF = Math.floor(((temp - 273.15) * 1.8) + 32);
     this.tempC = Math.floor(temp - 273.15);
-    // if (unit === null || unit === undefined || unit === "F") {
-    //   return Math.floor(((temp - 273.15) * 1.8) + 32);
-    // } else if (unit === "C") {
-    //   return Math.floor(temp - 273.15);
-    // }
+
+    this.assignDefaultTemp(this.tempF);
   };
+
+  this.assignDefaultTemp = function(temp) {
+    this.currTemp = temp;
+  };
+
+  this.toggleTemp = function(unit) {
+    if (unit === "F") {
+      this.currTemp = this.tempF;
+    } else if (unit === "C") {
+      this.currTemp = this.tempC;
+    }
+  }
 
   this.getLocation();
 
