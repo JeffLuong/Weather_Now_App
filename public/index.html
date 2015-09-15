@@ -18,15 +18,18 @@
   </head>
 
   <body ng-controller="w-NowController as now">
-    <div class="svg-container">
+    <div class="main-container">
 
-    </div>
-    <div class="temp-display">
-      <div ng-click="now.toggleTemp('F')">F</div>
-      <div ng-click="now.toggleTemp('C')">C</div>
-      <div ng-bind="now.currTemp"></div>
-    </div>
-    <div class="temp-toggle">
+      <div class="svg-container">
+
+      </div>
+      <div class="temp-display">
+        <div><span ng-bind="now.currTemp"></span>&deg;</div>
+      </div>
+      <div class="temp-toggle">
+        <div ng-click="now.toggleTemp('F')">F</div>
+        <div ng-click="now.toggleTemp('C')">C</div>
+      </div>
 
     </div>
   </body>

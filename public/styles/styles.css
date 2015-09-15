@@ -15,9 +15,32 @@ body {
 html {
   font-size: 1em;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
+}
+
+div.main-container {
+  padding: 50px;
 }
 
 div.temp-display {
   font-size: 3em;
+  color: white;
 }
+
+div.temp-toggle div:first-child,
+div.temp-toggle div:nth-child(2) {
+  font-size: 1.5em;
+  color: white;
+  padding-right: 1em;
+  display: inline-block;
+}
+
+div.temp-toggle div:first-child:hover,
+div.temp-toggle div:nth-child(2):hover {
+  cursor: pointer;
+}
+
+/*span.degree-symbol {
+  font-size: .75em;
+  padding-bottom: .25em;
+}*/

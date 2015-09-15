@@ -51,8 +51,14 @@ app.controller('w-NowController', ['$http', '$scope', function($http, $scope) {
 
     if (hour >= 6 && hour <= 18) {
       time = "day";
+      $('body').css({
+        'background-color' : 'lightblue'
+      });
     } else {
       time = "night";
+      $('body').css({
+        'background-color' : 'darkblue'
+      });
     }
 
     // Use time to concat a string that renders the correct SVG
