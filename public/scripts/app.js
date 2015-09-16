@@ -1,6 +1,7 @@
+console.log("app.js loaded...");
 var app = angular.module('w-Now', []);
 
-app.controller('w-NowController', ['$http', '$scope', function($http, $scope) {
+app.controller('w-NowController', ['$http', '$scope', '$compile', function($http, $scope, $compile) {
 
   this.temp;
   this.tempF;
@@ -46,18 +47,18 @@ app.controller('w-NowController', ['$http', '$scope', function($http, $scope) {
   };
 
   this.renderCondition = function(code, hour) {
-    console.log("rendering conditions");
+    console.log("rendering conditions", code);
     var time;
 
     if (hour >= 6 && hour <= 18) {
       time = "day";
       $('body').css({
-        'background-color' : 'lightblue'
+        'background-color' : '#ADD8E6'
       });
     } else {
       time = "night";
       $('body').css({
-        'background-color' : 'darkblue'
+        'background-color' : '#022078'
       });
     }
 
@@ -74,6 +75,7 @@ app.controller('w-NowController', ['$http', '$scope', function($http, $scope) {
       console.log("rendering", time, "atmosphere svg...");
     } else if (code >= 800 && code < 900) {
       console.log("rendering", time, "clouds svg...");
+      // this.renderPartlySunny();
     } else if (code >= 900 && code < 1000) {
       this.renderSpecialConditions(code);
     }
@@ -88,6 +90,7 @@ app.controller('w-NowController', ['$http', '$scope', function($http, $scope) {
 
   this.assignDefaultTemp = function(temp) {
     this.currTemp = temp;
+    this.toggleSelected("F");
   };
 
   this.toggleTemp = function(unit) {
@@ -96,7 +99,33 @@ app.controller('w-NowController', ['$http', '$scope', function($http, $scope) {
     } else if (unit === "C") {
       this.currTemp = this.tempC;
     }
+    this.toggleSelected(unit);
   }
+
+  this.toggleSelected = function(unit) {
+    $('.temp' + unit).addClass('selected');
+
+    if (unit !== "F") {
+      $('.tempF').removeClass('selected');
+    } else if (unit !== "C") {
+      $('.tempC').removeClass('selected');
+    }
+  };
+
+  this.renderPartlySunny = function() {
+    var $svg        = $('svg'),
+        $sunGroup   = $("<g id='sun'>"),
+        $cloudGroup = $("<g id='cloud'>"),
+        $sunCircle  = $("<circle class='st2' cx='528' cy='189' r='94'/>");
+
+    $sunGroup.append($sunCircle);
+    $svg.append($sunGroup);
+    $svg.append($cloudGroup);
+
+    $compile($sunCircle)($scope);
+    $compile($cloudGroup)($scope);
+    $compile($sunGroup)($scope);
+  };
 
   this.getLocation();
 

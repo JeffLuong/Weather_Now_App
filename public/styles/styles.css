@@ -27,20 +27,30 @@ div.temp-display {
   color: white;
 }
 
-div.temp-toggle div:first-child,
-div.temp-toggle div:nth-child(2) {
+div.temp-toggle div.tempF,
+div.temp-toggle div.tempC {
   font-size: 1.5em;
   color: white;
   padding-right: 1em;
   display: inline-block;
+  transition: .25s ease-in-out;
 }
 
-div.temp-toggle div:first-child:hover,
-div.temp-toggle div:nth-child(2):hover {
+div.temp-toggle div.tempF:hover,
+div.temp-toggle div.tempC:hover {
   cursor: pointer;
+}
+
+.selected {
+  font-weight: 700;
 }
 
 /*span.degree-symbol {
   font-size: .75em;
   padding-bottom: .25em;
 }*/
+
+/**** SVG styles ****/
+.st2 {
+  fill: #F9EC91;
+}

@@ -1,13 +1,18 @@
-var express = require('express'),
-    server  = express(),
-    morgan  = require('morgan'),
-    PORT    = process.env.PORT || 3000;
+var express        = require('express'),
+    server         = express(),
+    ejs            = require('ejs'),
+    expressLayouts = require('express-ejs-layouts'),
+    morgan         = require('morgan'),
+    PORT           = process.env.PORT || 3000;
+
+server.set('views', './views');
+server.set('view engine', 'ejs');
 
 server.use(morgan('short'));
 server.use(express.static('./public'));
-
 server.get('/', function(req, res) {
-  res.render('index');
+  console.log("rendered.");
+  res.render('layout.ejs');
 });
 
 server.listen(PORT, function () {

@@ -1,0 +1,32 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="800px"
+	 height="500px" viewBox="0 0 800 500" style="enable-background:new 0 0 800 500;" xml:space="preserve">
+<style type="text/css">
+<![CDATA[
+	.st0{fill:#E9FDFF;}
+	.st1{fill:none;stroke:#F9EC91;stroke-width:6;stroke-linecap:round;stroke-miterlimit:10;}
+	.st2{fill:#F9EC91;}
+]]>
+</style>
+<g id="sun">
+	<circle class="st2" cx="528" cy="189" r="94"/>
+	<g>
+		<line class="st1" x1="528" y1="70" x2="528" y2="39"/>
+		<line class="st1" x1="528" y1="308" x2="528" y2="339"/>
+		<line class="st1" x1="648" y1="190" x2="679" y2="190"/>
+		<line class="st1" x1="379" y1="190" x2="410" y2="190"/>
+		<line class="st1" x1="632.8" y1="131.4" x2="660" y2="115.8"/>
+		<line class="st1" x1="590.6" y1="87.2" x2="606.3" y2="60"/>
+		<line class="st1" x1="424.7" y1="131.4" x2="397.6" y2="115.8"/>
+		<line class="st1" x1="468" y1="87.2" x2="452.3" y2="60"/>
+		<line class="st1" x1="424.1" y1="246" x2="397" y2="261.7"/>
+		<line class="st1" x1="465.4" y1="289.3" x2="449.7" y2="316.4"/>
+		<line class="st1" x1="633.3" y1="246" x2="660.4" y2="261.7"/>
+		<line class="st1" x1="592" y1="289.3" x2="607.7" y2="316.4"/>
+	</g>
+</g>
+<g id="cloud">
+	<path class="st0" d="M467.8,210.4c0-62.7-50.7-113.4-113.4-113.4s-113.4,50.8-113.4,113.5c0,0-95.6-5.1-95.6,96.4
+		c0,93.3,100.9,91.1,100.9,91.1H581c0,0,76.7,0.2,76.7-61.4c0-64.3-72-62.5-72-62.5s4.3-40.6-36.2-64.6
+		C504.1,182.7,467.8,210.4,467.8,210.4z"/>
+</g>
+</svg>
