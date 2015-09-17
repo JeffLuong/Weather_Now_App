@@ -51,6 +51,183 @@ div.temp-toggle div.tempC:hover {
 }*/
 
 /**** SVG styles ****/
-.st2 {
-  fill: #F9EC91;
+
+#few-clouds-day,
+#extreme-storm,
+#cloudy,
+#scattered-clouds,
+#drizzle-light-rain,
+#rain,
+#thunderstorm,
+#snow,
+#atmosphere,
+#clear-day,
+#clear-night,
+#few-clouds-night,
+#windy {
+  display: none;
+}
+
+.rays {
+  transform-origin: 50% 50%;
+  -webkit-animation: rotate-rays 10s linear infinite;
+}
+
+@-webkit-keyframes rotate-rays {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.clouds {
+  -webkit-animation: float-cloud 2s ease-in-out infinite;
+}
+
+@-webkit-keyframes float-cloud {
+  0% {
+    -webkit-transform: translateX(0px);
+  }
+  50% {
+    -webkit-transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+
+.clouds2 {
+  -webkit-animation: float-cloud-left 2s ease-in-out infinite;
+}
+
+@-webkit-keyframes float-cloud-left {
+  0% {
+    -webkit-transform: translateX(0px);
+  }
+  50% {
+    -webkit-transform: translateX(-7px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+
+.rain {
+  position: relative;
+  width: 100px;
+  height: 200px;
+}
+
+.drops {
+  width: 3px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: white;
+  color: white;
+  position: absolute;
+  z-index: -2;
+  opacity: 0;
+}
+
+#drizzle-light-rain .rain .drops:first-child {
+  -webkit-animation: rain 1s 300ms infinite normal both;
+  left: 0px;
+}
+
+#drizzle-light-rain .rain .drops:nth-child(2) {
+  -webkit-animation: rain 1s 600ms infinite normal both;
+  left: 25px;
+}
+
+#drizzle-light-rain .rain .drops:nth-child(3) {
+  -webkit-animation: rain 1s 900ms infinite normal both;
+  left: 45px;
+}
+
+#drizzle-light-rain .rain .drops:nth-child(4) {
+  -webkit-animation: rain 1s 1200ms infinite normal both;
+  left: 75px;
+}
+
+#drizzle-light-rain .rain .drops:nth-child(5) {
+  -webkit-animation: rain 1s 1500ms infinite normal both;
+  left: 100px;
+}
+
+@-webkit-keyframes rain {
+  10% {
+    opacity: 1;
+  }
+  90% {
+    -webkit-transform: translateY(100px);
+  }
+}
+
+div.svg-container {
+  text-align: center;
+}
+
+.st0{
+  fill:#E9FDFF;
+}
+.st1{
+  fill:none;
+  stroke:#F48A21;
+  stroke-width:9;
+  stroke-linecap:round;
+  stroke-miterlimit:10;
+}
+
+.st2{
+  fill:none;
+  stroke:#738B91;
+  stroke-width:9;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-miterlimit:10;
+  stroke-dasharray:36,36;
+}
+
+.st3{
+  fill:#8FB0B5;
+}
+
+.st4{
+  fill:#F48A21;
+}
+
+.st5{
+  fill:none;
+  stroke:#F48A21;
+  stroke-width:9;
+  stroke-linecap:round;
+  stroke-miterlimit:10;
+}
+
+.st6{
+  fill:#999999;
+}
+
+.st7{
+  fill:#FCFABE;
+}
+
+.st8{
+  fill:#FFFFFF;
+}
+
+.st9{
+  fill:none;
+  stroke:#A2C8CC;
+  stroke-width:9;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-miterlimit:10;
+  stroke-dasharray:36,36;
+}
+
+.st10{
+  fill:#738B91;
+}
+.st11{
+  fill:#A2C8CC;
 }

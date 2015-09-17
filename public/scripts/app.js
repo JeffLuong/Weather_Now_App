@@ -64,21 +64,39 @@ app.controller('w-NowController', ['$http', '$scope', '$compile', function($http
 
     // Use time to concat a string that renders the correct SVG
     if (code >= 200 && code < 300) {
-      console.log("rendering", time, "thunderstorm svg...");
+      this.renderSVG("#thunderstorm");
     } else if (code >= 300 && code < 400) {
-      console.log("rendering", time, "drizzle svg...");
+      this.renderSVG("#drizzle-light-rain");
     } else if (code >= 500 && code < 600) {
-      console.log("rendering", time, "rain svg...");
+      this.renderSVG("#rain");
     } else if (code >= 600 && code < 700) {
-      console.log("rendering", time, "snow svg...");
+      this.renderSVG("#snow");
     } else if (code >= 700 && code < 800) {
-      console.log("rendering", time, "atmosphere svg...");
+      this.renderSVG("#atmosphere");
     } else if (code >= 800 && code < 900) {
-      console.log("rendering", time, "clouds svg...");
-      // this.renderPartlySunny();
+      if (code === 800) {
+        // this.renderSVG("#drizzle-light-rain");
+        this.renderSVG("#clear-" + time);
+      } else if (code === 801) {
+        this.renderSVG("#few-clouds-" + time);
+      } else if (code === 802) {
+        this.renderSVG("#scattered-clouds");
+      } else if (code === 803 || code === 804) {
+        this.renderSVG("#cloudy");
+      }
     } else if (code >= 900 && code < 1000) {
-      this.renderSpecialConditions(code);
-    }
+      if (code === 900 || code === 902 || code >= 960 && code <= 962) {
+        this.renderSVG("#extreme-storm");
+      } else if (code === 905 || code >= 956 && code <= 959) {
+        this.renderSVG("#windy");
+      }
+    };
+  };
+
+  this.renderSVG = function(condition) {
+    $(condition).css({
+      "display" : "block"
+    });
   };
 
   this.convertTempUnit = function(temp) {
@@ -112,20 +130,6 @@ app.controller('w-NowController', ['$http', '$scope', '$compile', function($http
     }
   };
 
-  this.renderPartlySunny = function() {
-    var $svg        = $('svg'),
-        $sunGroup   = $("<g id='sun'>"),
-        $cloudGroup = $("<g id='cloud'>"),
-        $sunCircle  = $("<circle class='st2' cx='528' cy='189' r='94'/>");
-
-    $sunGroup.append($sunCircle);
-    $svg.append($sunGroup);
-    $svg.append($cloudGroup);
-
-    $compile($sunCircle)($scope);
-    $compile($cloudGroup)($scope);
-    $compile($sunGroup)($scope);
-  };
 
   this.getLocation();
 
