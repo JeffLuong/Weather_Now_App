@@ -12,7 +12,7 @@ app.controller('w-NowController', ['$http', '$scope', '$compile', function($http
 
   this.getLocation = function() {
     console.log("getting current location...");
-    var url = "http://freegeoip.net/json/?callback=JSON_CALLBACK";
+    var url = "https://freegeoip.net/json/?callback=JSON_CALLBACK";
     $http.jsonp(url)
   .success(function (data) {
         console.log("this is the location data received...", data);
@@ -30,7 +30,7 @@ app.controller('w-NowController', ['$http', '$scope', '$compile', function($http
 
   this.currWeather = function(lat, long) {
     console.log("getting current weather data...");
-    $http.get("http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long)
+    $http.get("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long)
       .success(function (data) {
         console.log("data received...", data);
         var date               = new Date(),
