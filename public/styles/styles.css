@@ -131,26 +131,31 @@ div.temp-toggle div.tempC:hover {
 
 .rain .drops:first-child {
   -webkit-animation: rain 1s 300ms infinite normal both;
+  -moz-animation: rain 1s 300ms infinite normal both;
   left: 0px;
 }
 
 .rain .drops:nth-child(2) {
   -webkit-animation: rain 1s 600ms infinite normal both;
+  -moz-animation: rain 1s 600ms infinite normal both;
   left: 75px;
 }
 
 .rain .drops:nth-child(3) {
   -webkit-animation: rain 1s 900ms infinite normal both;
+  -moz-animation: rain 1s 900ms infinite normal both;
   left: 150px;
 }
 
 .rain .drops:nth-child(4) {
   -webkit-animation: rain 1s 1200ms infinite normal both;
+  -moz-animation: rain 1s 1200ms infinite normal both;
   left: 225px;
 }
 
 .rain .drops:nth-child(5) {
   -webkit-animation: rain 1s 1500ms infinite normal both;
+  -moz-animation: rain 1s 1500ms infinite normal both;
   left: 300px;
 }
 
@@ -164,26 +169,31 @@ div.temp-toggle div.tempC:hover {
 
 .rain .heavy:first-child {
   -webkit-animation: rain .25s 300ms infinite normal both;
+  -moz-animation: rain .25s 300ms infinite normal both;
   left: 0px;
 }
 
 .rain .heavy:nth-child(2) {
   -webkit-animation: rain .25s 600ms infinite normal both;
+  -moz-animation: rain .25s 600ms infinite normal both;
   left: 75px;
 }
 
 .rain .heavy:nth-child(3) {
   -webkit-animation: rain .25s 900ms infinite normal both;
+  -moz-animation: rain .25s 900ms infinite normal both;
   left: 150px;
 }
 
 .rain .heavy:nth-child(4) {
   -webkit-animation: rain .25s 1200ms infinite normal both;
+  -moz-animation: rain .25s 1200ms infinite normal both;
   left: 225px;
 }
 
 .rain .heavy:nth-child(5) {
   -webkit-animation: rain .25s 1500ms infinite normal both;
+  -moz-animation: rain .25s 1500ms infinite normal both;
   left: 300px;
 }
 
