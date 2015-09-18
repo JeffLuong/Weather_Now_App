@@ -138,7 +138,6 @@ div.temp-toggle div.tempC:hover {
 .rain {
   position: relative;
   width: 400px;
-  height: 250px;
   margin: 0 auto;
   bottom: 250px;
   z-index: -1;
