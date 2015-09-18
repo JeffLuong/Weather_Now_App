@@ -63,22 +63,24 @@ app.controller('w-NowController', ['$http', '$scope', '$compile', function($http
     }
 
     // Use time to concat a string that renders the correct SVG
-    if (code >= 200 && code < 300) {
-      this.renderSVG("#thunderstorm");
-    } else if (code >= 300 && code < 400) {
+    if (code >= 300 && code < 400) {
       this.renderSVG("#cloudy, #drizzle-rain");
-    } else if (code >= 500 && code < 600) {
+    } else if ((code >= 200 && code < 300) || (code >= 500 && code < 600)) {
       this.renderSVG("#dark-clouds, #drizzle-rain");
       $(".drops").addClass("heavy");
+      if (code >= 200 && code < 300) {
+        this.renderSVG("#lightning");
+      }
     } else if (code >= 600 && code < 700) {
       this.renderSVG("#snow");
     } else if (code >= 700 && code < 800) {
       this.renderSVG("#atmosphere");
     } else if (code >= 800 && code < 900) {
       if (code === 800) {
-        // this.renderSVG("#dark-clouds, #drizzle-rain");
-        // $(".drops").addClass("heavy");
-        this.renderSVG("#clear-" + time);
+        this.renderSVG("#dark-clouds, #drizzle-rain, #lightning");
+        $(".drops").addClass("heavy");
+        // this.renderSVG("#lightning");
+        // this.renderSVG("#clear-" + time);
       } else if (code === 801) {
         this.renderSVG("#few-clouds-" + time);
       } else if (code === 802) {

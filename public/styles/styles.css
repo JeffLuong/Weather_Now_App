@@ -58,7 +58,7 @@ div.temp-toggle div.tempC:hover {
 #scattered-clouds,
 #drizzle-rain,
 #dark-clouds,
-#thunderstorm,
+#lightning,
 #snow,
 #atmosphere,
 #clear-day,
@@ -238,6 +238,34 @@ div.temp-toggle div.tempC:hover {
     -webkit-transform: translateY(250px);
     -moz-transform: translateY(250px);
     -ms-transform: translateY(250px);
+  }
+}
+
+/*** LIGHTNING BOLTS ***/
+
+.bolts {
+  opacity: 0;
+}
+
+.bolts:first-child {
+  -webkit-animation: flash 2s 300ms infinite normal both;
+  -moz-animation: flash 2s 300ms infinite normal both;
+  -ms-animation: flash 2s 300ms infinite normal both;
+}
+
+.bolts:nth-child(2) {
+  -webkit-animation: flash 1.5s 800ms infinite normal both;
+  -moz-animation: flash 1.5s 800ms infinite normal both;
+  -ms-animation: flash 1.5s 800ms infinite normal both;
+}
+
+@-webkit-keyframes flash {
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 
