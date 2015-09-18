@@ -77,10 +77,7 @@ app.controller('w-NowController', ['$http', '$scope', '$compile', function($http
       this.renderSVG("#atmosphere");
     } else if (code >= 800 && code < 900) {
       if (code === 800) {
-        this.renderSVG("#dark-clouds, #drizzle-rain, #lightning");
-        $(".drops").addClass("heavy");
-        // this.renderSVG("#lightning");
-        // this.renderSVG("#clear-" + time);
+        this.renderSVG("#clear-" + time);
       } else if (code === 801) {
         this.renderSVG("#few-clouds-" + time);
       } else if (code === 802) {
