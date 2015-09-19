@@ -269,6 +269,52 @@ div.temp-toggle div.tempC:hover {
   }
 }
 
+/*** EARS ANIMATION ***/
+
+#clear-night :nth-child(3),
+#few-clouds-night .ears:nth-last-of-type(2) {
+  -webkit-animation: ears 2s 300ms infinite normal both;
+  -moz-animation: ears 2s 300ms infinite normal both;
+  -ms-animation: ears 2s 300ms infinite normal both;
+  transform-origin: 0% 100%;
+}
+
+#clear-night :last-child,
+#few-clouds-night .ears:last-child {
+  -webkit-animation: ears-opp 2s 300ms infinite normal both;
+  -moz-animation: ears-opp 2s 300ms infinite normal both;
+  -ms-animation: ears-opp 2s 300ms infinite normal both;
+  transform-origin: 0% 100%;
+}
+
+@-webkit-keyframes ears {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes ears-opp {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 div.svg-container {
   text-align: center;
 }
@@ -337,4 +383,8 @@ div.svg-container {
 }
 .st11{
   fill:#A2C8CC;
+}
+
+.st12{
+  fill:#022078;
 }
