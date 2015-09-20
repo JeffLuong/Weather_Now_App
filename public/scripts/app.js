@@ -72,7 +72,7 @@ app.controller('w-NowController', ['$http', '$scope', '$compile', function($http
         this.renderSVG("#lightning");
       }
     } else if (code >= 600 && code < 700) {
-      this.renderSVG("#snow");
+      this.renderSVG("#cloudy, #snow");
     } else if (code >= 700 && code < 800) {
       this.renderSVG("#atmosphere");
     } else if (code >= 800 && code < 900) {

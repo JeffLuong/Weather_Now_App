@@ -135,7 +135,7 @@ div.temp-toggle div.tempC:hover {
   }
 }
 
-.rain {
+.rain, #snow {
   position: relative;
   width: 400px;
   margin: 0 auto;
@@ -143,7 +143,7 @@ div.temp-toggle div.tempC:hover {
   z-index: -1;
 }
 
-.drops {
+.drops, .flake {
   width: 4px;
   height: 50px;
   border-radius: 50%;
@@ -238,6 +238,119 @@ div.temp-toggle div.tempC:hover {
     -webkit-transform: translateY(250px);
     -moz-transform: translateY(250px);
     -ms-transform: translateY(250px);
+  }
+}
+
+/*** SNOW STYLES ***/
+
+.rain, #snow {
+  bottom: 150px;
+}
+
+.flake {
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+  border-radius: 50%;
+  background-color: #E9FDFF;
+}
+
+
+#snow .flake:first-child {
+  -webkit-animation: fall .75s linear 800ms infinite both;
+  -moz-animation: fall .75s linear 800ms infinite both;
+  -ms-animation: fall .75s linear 800ms infinite both;
+  left: 0px;
+}
+
+#snow .flake:nth-child(2) {
+  -webkit-animation: fall 1s linear 100ms infinite both;
+  -moz-animation: fall 1s linear 100ms infinite both;
+  -ms-animation: fall 1s linear 100ms infinite both;
+  width: 15px;
+  height: 15px;
+  left: 35px;
+}
+
+#snow .flake:nth-child(3) {
+  -webkit-animation: fall-left 1.5s linear 600ms infinite both;
+  -moz-animation: fall-left 1.5s linear 600ms infinite both;
+  -ms-animation: fall-left 1.5s linear 600ms infinite both;
+  left: 75px;
+}
+
+#snow .flake:nth-child(4) {
+  -webkit-animation: fall .85s linear 400ms infinite both;
+  -moz-animation: fall .85s linear 400ms infinite both;
+  -ms-animation: fall .85s linear 400ms infinite both;
+  width: 5px;
+  height: 5px;
+  left: 125px;
+}
+
+#snow .flake:nth-child(5) {
+  -webkit-animation: fall-left 1.75s linear 800ms infinite both;
+  -moz-animation: fall-left 1.75s linear 800ms infinite both;
+  -ms-animation: fall-left 1.75s linear 800ms infinite both;
+  width: 15px;
+  height: 15px;
+  left: 165px;
+}
+
+#snow .flake:nth-child(6) {
+  -webkit-animation: fall 1.25s linear 800ms infinite both;
+  -moz-animation: fall 1.25s linear 800ms infinite both;
+  -ms-animation: fall 1.25s linear 800ms infinite both;
+  width: 15px;
+  height: 15px;
+  left: 190px;
+}
+
+#snow .flake:nth-child(7) {
+  -webkit-animation: fall-left .75s linear 800ms infinite both;
+  -moz-animation: fall-left .75s linear 800ms infinite both;
+  -ms-animation: fall-left .75s linear 800ms infinite both;
+  width: 15px;
+  height: 15px;
+  left: 240px;
+}
+
+#snow .flake:nth-child(8) {
+  -webkit-animation: fall 1s linear 800ms infinite both;
+  -moz-animation: fall 1s linear 800ms infinite both;
+  -ms-animation: fall 1s linear 800ms infinite both;
+  width: 15px;
+  height: 15px;
+  left: 300px;
+}
+
+@-webkit-keyframes fall {
+  0% {
+    -webkit-transform: translateX(0px) translateY(0px);
+    -moz-transform: translateX(0px) translateY(0px);
+    -ms-transform: translateX(0px) translateY(0px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(15px) translateY(250px);
+    -moz-transform: translateX(15px) translateY(250px);
+    -ms-transform: translateX(15px) translateY(250px);
+  }
+}
+
+@-webkit-keyframes fall-left {
+  0% {
+    -webkit-transform: translateX(0px) translateY(0px);
+    -moz-transform: translateX(0px) translateY(0px);
+    -ms-transform: translateX(0px) translateY(0px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px) translateY(250px);
+    -moz-transform: translateX(-20px) translateY(250px);
+    -ms-transform: translateX(-20px) translateY(250px);
   }
 }
 
