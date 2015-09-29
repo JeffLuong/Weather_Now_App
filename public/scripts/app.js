@@ -83,8 +83,7 @@ app.controller('w-NowController', ['$http', '$scope', '$compile', function($http
       } else if (code === 802) {
         this.renderSVG("#scattered-clouds");
       } else if (code === 803 || code === 804) {
-        this.renderSVG("#windy");
-        // this.renderSVG("#cloudy");
+        this.renderSVG("#cloudy");
       }
     } else if (code >= 900 && code < 1000) {
       if (code === 900 || code === 902 || code >= 960 && code <= 962) {
