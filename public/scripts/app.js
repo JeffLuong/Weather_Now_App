@@ -30,7 +30,8 @@ app.controller('w-NowController', ['$http', '$scope', '$compile', function($http
 
   this.currWeather = function(lat, long) {
     console.log("getting current weather data...");
-    $http.get("http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long)
+    console.log(openWeatherKey);
+    $http.get("http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&APPID=" + openWeatherKey)
       .success(function (data) {
         console.log("data received...", data);
         var date = new Date(),

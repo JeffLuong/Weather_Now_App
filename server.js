@@ -3,7 +3,10 @@ var express        = require('express'),
     ejs            = require('ejs'),
     expressLayouts = require('express-ejs-layouts'),
     morgan         = require('morgan'),
-    PORT           = process.env.PORT || 3000;
+    PORT           = process.env.PORT || 3000,
+    openWeatherKey = process.env.openWeatherKey;
+
+console.log(openWeatherKey);
 
 server.set('views', './views');
 server.set('view engine', 'ejs');
