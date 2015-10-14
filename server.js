@@ -4,9 +4,9 @@ var express        = require('express'),
     expressLayouts = require('express-ejs-layouts'),
     morgan         = require('morgan'),
     PORT           = process.env.PORT || 3000,
-    openWeatherKey = process.env.openWeatherKey;
+    openWeatherKey = process.env.OPEN_WEATHER_KEY;
 
-console.log(openWeatherKey);
+    console.log(openWeatherKey);
 
 server.set('views', './views');
 server.set('view engine', 'ejs');
