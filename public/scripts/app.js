@@ -7,6 +7,7 @@ app.controller('w-NowController', ['$http', '$scope', '$compile', function($http
   this.tempF;
   this.tempC;
   this.currTemp;
+  this.urlKey = "c4a7a0b1db1f6b2be70ba3d035152ad7";
 
   var controller = this;
 
@@ -30,8 +31,7 @@ app.controller('w-NowController', ['$http', '$scope', '$compile', function($http
 
   this.currWeather = function(lat, long) {
     console.log("getting current weather data...");
-    console.log(openWeatherKey);
-    $http.get("http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&APPID=" + openWeatherKey)
+    $http.get("http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&APPID=" + this.urlKey)
       .success(function (data) {
         console.log("data received...", data);
         var date = new Date(),
