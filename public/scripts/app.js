@@ -1,4 +1,3 @@
-console.log("app.js loaded...");
 var app = angular.module('w-Now', []);
 
 app.controller('w-NowController', ['$http', '$scope', '$compile', function($http, $scope, $compile) {
@@ -12,16 +11,11 @@ app.controller('w-NowController', ['$http', '$scope', '$compile', function($http
   var controller = this;
 
   this.getLocation = function() {
-    console.log("getting current location...");
     var url = "https://freegeoip.net/json/?callback=JSON_CALLBACK";
     $http.jsonp(url)
   .success(function (data) {
-        console.log("this is the location data received...", data);
-
         var long = data.longitude,
             lat  = data.latitude;
-
-        console.log(lat, long);
 
         controller.currWeather(lat, long);
     }).error(function (data) {
@@ -30,10 +24,8 @@ app.controller('w-NowController', ['$http', '$scope', '$compile', function($http
   };
 
   this.currWeather = function(lat, long) {
-    console.log("getting current weather data...");
     $http.get("http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&APPID=" + this.urlKey)
       .success(function (data) {
-        console.log("data received...", data);
         var date = new Date(),
             hour = date.getHours();
 
@@ -48,7 +40,6 @@ app.controller('w-NowController', ['$http', '$scope', '$compile', function($http
   };
 
   this.renderCondition = function(code, hour) {
-    console.log("rendering conditions", code);
     var time;
 
     if (hour >= 6 && hour <= 18) {

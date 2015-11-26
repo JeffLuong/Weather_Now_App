@@ -5,8 +5,6 @@ var express          = require('express'),
     morgan           = require('morgan'),
     PORT             = process.env.PORT || 3000;
 
-    // console.log(OPEN_WEATHER_KEY);
-
 server.set('views', './views');
 server.set('view engine', 'ejs');
 
