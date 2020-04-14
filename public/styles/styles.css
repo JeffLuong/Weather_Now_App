@@ -64,7 +64,8 @@ div.temp-toggle div.tempC:hover {
 #atmosphere,
 #clear-night,
 #few-clouds-night,
-#windy {
+#windy,
+#error-msg {
   display: none;
 }
 
