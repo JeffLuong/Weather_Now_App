@@ -44,7 +44,7 @@ server.get('/api/weather', async function(req, res) {
   try {
     const geo = await getReq('https://freegeoip.app/json/');
     const { latitude: lat, longitude: lon } = JSON.parse(geo);
-    const urlKey = 'c4a7a0b1db1f6b2be70ba3d035152ad7';
+    const urlKey = process.env.OPEN_WEATHER_KEY;
     const weather = await getReq(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${urlKey}`);
     const { cod, message } = JSON.parse(weather);
 
