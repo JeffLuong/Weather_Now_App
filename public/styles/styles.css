@@ -70,14 +70,22 @@ div.temp-toggle div.tempC:hover {
 }
 
 .rays {
-  transform-origin: 50% 50%;
-  -webkit-transform-origin: 50% 50%;
-  -moz-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
+  transform-origin: 51.5% 51.5%;
+  -webkit-transform-origin: 51.5% 51.5%;
+  -moz-transform-origin: 51.5% 51.5%;
+  -ms-transform-origin: 51.5% 51.5%;
   -webkit-animation: rotate-rays 10s linear infinite;
   -moz-animation: rotate-rays 10s linear infinite;
   -ms-animation: rotate-rays 10s linear infinite;
+  animation: rotate-rays 10s linear infinite;
+}
 
+@keyframes rotate-rays {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
 }
 
 @-webkit-keyframes rotate-rays {
@@ -92,6 +100,25 @@ div.temp-toggle div.tempC:hover {
   -webkit-animation: float-cloud 2s ease-in-out infinite;
   -moz-animation: float-cloud 2s ease-in-out infinite;
   -ms-animation: float-cloud 2s ease-in-out infinite;
+  animation: float-cloud 2s ease-in-out infinite;
+}
+
+@keyframes float-cloud {
+  0% {
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+  }
+  50% {
+    -webkit-transform: translateX(10px);
+    -moz-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+  }
 }
 
 @-webkit-keyframes float-cloud {
@@ -116,6 +143,25 @@ div.temp-toggle div.tempC:hover {
   -webkit-animation: float-cloud-left 2s ease-in-out infinite;
   -moz-animation: float-cloud-left 2s ease-in-out infinite;
   -ms-animation: float-cloud-left 2s ease-in-out infinite;
+  animation: float-cloud-left 2s ease-in-out infinite;
+}
+
+@keyframes float-cloud-left {
+  0% {
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+  }
+  50% {
+    -webkit-transform: translateX(-7px);
+    -moz-transform: translateX(-7px);
+    -ms-transform: translateX(-7px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+  }
 }
 
 @-webkit-keyframes float-cloud-left {
@@ -157,6 +203,7 @@ div.temp-toggle div.tempC:hover {
   -webkit-animation: rain 1s 300ms infinite normal both;
   -moz-animation: rain 1s 300ms infinite normal both;
   -ms-animation: rain 1s 300ms infinite normal both;
+  animation: rain 1s 300ms infinite normal both;
   left: 0px;
 }
 
@@ -164,6 +211,7 @@ div.temp-toggle div.tempC:hover {
   -webkit-animation: rain 1s 600ms infinite normal both;
   -moz-animation: rain 1s 600ms infinite normal both;
   -ms-animation: rain 1s 600ms infinite normal both;
+  animation: rain 1s 600ms infinite normal both;
   left: 75px;
 }
 
@@ -171,6 +219,7 @@ div.temp-toggle div.tempC:hover {
   -webkit-animation: rain 1s 900ms infinite normal both;
   -moz-animation: rain 1s 900ms infinite normal both;
   -ms-animation: rain 1s 900ms infinite normal both;
+  animation: rain 1s 900ms infinite normal both;
   left: 150px;
 }
 
@@ -178,6 +227,7 @@ div.temp-toggle div.tempC:hover {
   -webkit-animation: rain 1s 1200ms infinite normal both;
   -moz-animation: rain 1s 1200ms infinite normal both;
   -ms-animation: rain 1s 1200ms infinite normal both;
+  animation: rain 1s 1200ms infinite normal both;
   left: 225px;
 }
 
@@ -185,6 +235,7 @@ div.temp-toggle div.tempC:hover {
   -webkit-animation: rain 1s 1500ms infinite normal both;
   -moz-animation: rain 1s 1500ms infinite normal both;
   -ms-animation: rain 1s 1500ms infinite normal both;
+  animation: rain 1s 1500ms infinite normal both;
   left: 300px;
 }
 
@@ -200,6 +251,7 @@ div.temp-toggle div.tempC:hover {
   -webkit-animation: rain .25s 300ms infinite normal both;
   -moz-animation: rain .25s 300ms infinite normal both;
   -ms-animation: rain .25s 300ms infinite normal both;
+  animation: rain .25s 300ms infinite normal both;
   left: 0px;
 }
 
@@ -207,6 +259,7 @@ div.temp-toggle div.tempC:hover {
   -webkit-animation: rain .25s 600ms infinite normal both;
   -moz-animation: rain .25s 600ms infinite normal both;
   -ms-animation: rain .25s 600ms infinite normal both;
+  animation: rain .25s 600ms infinite normal both;
   left: 75px;
 }
 
@@ -214,6 +267,7 @@ div.temp-toggle div.tempC:hover {
   -webkit-animation: rain .25s 900ms infinite normal both;
   -moz-animation: rain .25s 900ms infinite normal both;
   -ms-animation: rain .25s 900ms infinite normal both;
+  animation: rain .25s 900ms infinite normal both;
   left: 150px;
 }
 
@@ -221,6 +275,7 @@ div.temp-toggle div.tempC:hover {
   -webkit-animation: rain .25s 1200ms infinite normal both;
   -moz-animation: rain .25s 1200ms infinite normal both;
   -ms-animation: rain .25s 1200ms infinite normal both;
+  animation: rain .25s 1200ms infinite normal both;
   left: 225px;
 }
 
@@ -228,7 +283,19 @@ div.temp-toggle div.tempC:hover {
   -webkit-animation: rain .25s 1500ms infinite normal both;
   -moz-animation: rain .25s 1500ms infinite normal both;
   -ms-animation: rain .25s 1500ms infinite normal both;
+  animation: rain .25s 1500ms infinite normal both;
   left: 300px;
+}
+
+@keyframes rain {
+  10% {
+    opacity: 1;
+  }
+  90% {
+    -webkit-transform: translateY(250px);
+    -moz-transform: translateY(250px);
+    -ms-transform: translateY(250px);
+  }
 }
 
 @-webkit-keyframes rain {
@@ -261,6 +328,7 @@ div.temp-toggle div.tempC:hover {
   -webkit-animation: fall .75s linear 800ms infinite both;
   -moz-animation: fall .75s linear 800ms infinite both;
   -ms-animation: fall .75s linear 800ms infinite both;
+  animation: fall .75s linear 800ms infinite both;
   left: 0px;
 }
 
@@ -268,6 +336,7 @@ div.temp-toggle div.tempC:hover {
   -webkit-animation: fall 1s linear 100ms infinite both;
   -moz-animation: fall 1s linear 100ms infinite both;
   -ms-animation: fall 1s linear 100ms infinite both;
+  animation: fall 1s linear 100ms infinite both;
   width: 15px;
   height: 15px;
   left: 35px;
@@ -277,6 +346,7 @@ div.temp-toggle div.tempC:hover {
   -webkit-animation: fall-left 1.5s linear 600ms infinite both;
   -moz-animation: fall-left 1.5s linear 600ms infinite both;
   -ms-animation: fall-left 1.5s linear 600ms infinite both;
+  animation: fall-left 1.5s linear 600ms infinite both;
   left: 75px;
 }
 
@@ -284,6 +354,7 @@ div.temp-toggle div.tempC:hover {
   -webkit-animation: fall .85s linear 400ms infinite both;
   -moz-animation: fall .85s linear 400ms infinite both;
   -ms-animation: fall .85s linear 400ms infinite both;
+  animation: fall .85s linear 400ms infinite both;
   width: 5px;
   height: 5px;
   left: 125px;
@@ -293,6 +364,7 @@ div.temp-toggle div.tempC:hover {
   -webkit-animation: fall-left 1.75s linear 800ms infinite both;
   -moz-animation: fall-left 1.75s linear 800ms infinite both;
   -ms-animation: fall-left 1.75s linear 800ms infinite both;
+  animation: fall-left 1.75s linear 800ms infinite both;
   width: 15px;
   height: 15px;
   left: 165px;
@@ -302,6 +374,7 @@ div.temp-toggle div.tempC:hover {
   -webkit-animation: fall 1.25s linear 800ms infinite both;
   -moz-animation: fall 1.25s linear 800ms infinite both;
   -ms-animation: fall 1.25s linear 800ms infinite both;
+  animation: fall 1.25s linear 800ms infinite both;
   width: 15px;
   height: 15px;
   left: 190px;
@@ -311,6 +384,7 @@ div.temp-toggle div.tempC:hover {
   -webkit-animation: fall-left .75s linear 800ms infinite both;
   -moz-animation: fall-left .75s linear 800ms infinite both;
   -ms-animation: fall-left .75s linear 800ms infinite both;
+  animation: fall-left .75s linear 800ms infinite both;
   width: 15px;
   height: 15px;
   left: 240px;
@@ -320,9 +394,25 @@ div.temp-toggle div.tempC:hover {
   -webkit-animation: fall 1s linear 800ms infinite both;
   -moz-animation: fall 1s linear 800ms infinite both;
   -ms-animation: fall 1s linear 800ms infinite both;
+  animation: fall 1s linear 800ms infinite both;
   width: 15px;
   height: 15px;
   left: 300px;
+}
+
+@keyframes fall {
+  0% {
+    -webkit-transform: translateX(0px) translateY(0px);
+    -moz-transform: translateX(0px) translateY(0px);
+    -ms-transform: translateX(0px) translateY(0px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(15px) translateY(250px);
+    -moz-transform: translateX(15px) translateY(250px);
+    -ms-transform: translateX(15px) translateY(250px);
+  }
 }
 
 @-webkit-keyframes fall {
@@ -337,6 +427,21 @@ div.temp-toggle div.tempC:hover {
     -webkit-transform: translateX(15px) translateY(250px);
     -moz-transform: translateX(15px) translateY(250px);
     -ms-transform: translateX(15px) translateY(250px);
+  }
+}
+
+@keyframes fall-left {
+  0% {
+    -webkit-transform: translateX(0px) translateY(0px);
+    -moz-transform: translateX(0px) translateY(0px);
+    -ms-transform: translateX(0px) translateY(0px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px) translateY(250px);
+    -moz-transform: translateX(-20px) translateY(250px);
+    -ms-transform: translateX(-20px) translateY(250px);
   }
 }
 
@@ -365,12 +470,24 @@ div.temp-toggle div.tempC:hover {
   -webkit-animation: flash 2s 300ms infinite normal both;
   -moz-animation: flash 2s 300ms infinite normal both;
   -ms-animation: flash 2s 300ms infinite normal both;
+  animation: flash 2s 300ms infinite normal both;
 }
 
 .bolts:nth-child(2) {
   -webkit-animation: flash 1.5s 800ms infinite normal both;
   -moz-animation: flash 1.5s 800ms infinite normal both;
   -ms-animation: flash 1.5s 800ms infinite normal both;
+  animation: flash 1.5s 800ms infinite normal both;
+}
+
+@keyframes flash {
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 @-webkit-keyframes flash {
@@ -390,6 +507,7 @@ div.temp-toggle div.tempC:hover {
   -webkit-animation: ears 2s 300ms infinite normal both;
   -moz-animation: ears 2s 300ms infinite normal both;
   -ms-animation: ears 2s 300ms infinite normal both;
+  animation: ears 2s 300ms infinite normal both;
   transform-origin: 0% 100%;
 }
 
@@ -398,7 +516,22 @@ div.temp-toggle div.tempC:hover {
   -webkit-animation: ears-opp 2s 300ms infinite normal both;
   -moz-animation: ears-opp 2s 300ms infinite normal both;
   -ms-animation: ears-opp 2s 300ms infinite normal both;
+  animation: ears-opp 2s 300ms infinite normal both;
   transform-origin: 0% 100%;
+}
+
+@keyframes ears {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 @-webkit-keyframes ears {
@@ -408,6 +541,20 @@ div.temp-toggle div.tempC:hover {
 
   50% {
     transform: rotate(5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes ears-opp {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-5deg);
   }
 
   100% {
@@ -435,6 +582,12 @@ div.temp-toggle div.tempC:hover {
   animation: dash 5s linear infinite;
 }
 
+@keyframes dash {
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+
 @-webkit-keyframes dash {
   to {
     stroke-dashoffset: 1000;
@@ -445,6 +598,12 @@ div.temp-toggle div.tempC:hover {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
   animation: blow 5s linear forwards;
+}
+
+@keyframes blow {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 @-webkit-keyframes blow {
