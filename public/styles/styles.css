@@ -69,7 +69,11 @@ div.temp-toggle div.tempC:hover {
   display: none;
 }
 
-.rays {
+.is-visible {
+  display: block !important;
+}
+
+.is-visible .rays {
   transform-origin: 51.5% 51.5%;
   -webkit-transform-origin: 51.5% 51.5%;
   -moz-transform-origin: 51.5% 51.5%;
@@ -78,6 +82,13 @@ div.temp-toggle div.tempC:hover {
   -moz-animation: rotate-rays 10s linear infinite;
   -ms-animation: rotate-rays 10s linear infinite;
   animation: rotate-rays 10s linear infinite;
+}
+
+#few-clouds-day .rays {
+  transform-origin: 60% 33%;
+  -webkit-transform-origin: 60% 33%;
+  -moz-transform-origin: 60% 33%;
+  -ms-transform-origin: 60% 33%;
 }
 
 @keyframes rotate-rays {
@@ -96,7 +107,7 @@ div.temp-toggle div.tempC:hover {
   }
 }
 
-.clouds {
+.is-visible .clouds {
   -webkit-animation: float-cloud 2s ease-in-out infinite;
   -moz-animation: float-cloud 2s ease-in-out infinite;
   -ms-animation: float-cloud 2s ease-in-out infinite;
@@ -139,7 +150,8 @@ div.temp-toggle div.tempC:hover {
   }
 }
 
-.clouds2 {
+.clouds2.is-visible,
+.is-visible .clouds2 {
   -webkit-animation: float-cloud-left 2s ease-in-out infinite;
   -moz-animation: float-cloud-left 2s ease-in-out infinite;
   -ms-animation: float-cloud-left 2s ease-in-out infinite;
@@ -199,7 +211,7 @@ div.temp-toggle div.tempC:hover {
   opacity: 0;
 }
 
-.rain .drops:first-child {
+.rain.is-visible .drops:first-child {
   -webkit-animation: rain 1s 300ms infinite normal both;
   -moz-animation: rain 1s 300ms infinite normal both;
   -ms-animation: rain 1s 300ms infinite normal both;
@@ -207,7 +219,7 @@ div.temp-toggle div.tempC:hover {
   left: 0px;
 }
 
-.rain .drops:nth-child(2) {
+.rain.is-visible .drops:nth-child(2) {
   -webkit-animation: rain 1s 600ms infinite normal both;
   -moz-animation: rain 1s 600ms infinite normal both;
   -ms-animation: rain 1s 600ms infinite normal both;
@@ -215,7 +227,7 @@ div.temp-toggle div.tempC:hover {
   left: 75px;
 }
 
-.rain .drops:nth-child(3) {
+.rain.is-visible .drops:nth-child(3) {
   -webkit-animation: rain 1s 900ms infinite normal both;
   -moz-animation: rain 1s 900ms infinite normal both;
   -ms-animation: rain 1s 900ms infinite normal both;
@@ -223,7 +235,7 @@ div.temp-toggle div.tempC:hover {
   left: 150px;
 }
 
-.rain .drops:nth-child(4) {
+.rain.is-visible .drops:nth-child(4) {
   -webkit-animation: rain 1s 1200ms infinite normal both;
   -moz-animation: rain 1s 1200ms infinite normal both;
   -ms-animation: rain 1s 1200ms infinite normal both;
@@ -231,7 +243,7 @@ div.temp-toggle div.tempC:hover {
   left: 225px;
 }
 
-.rain .drops:nth-child(5) {
+.rain.is-visible .drops:nth-child(5) {
   -webkit-animation: rain 1s 1500ms infinite normal both;
   -moz-animation: rain 1s 1500ms infinite normal both;
   -ms-animation: rain 1s 1500ms infinite normal both;
@@ -247,7 +259,7 @@ div.temp-toggle div.tempC:hover {
   background-color: #8FB0B5;
 }
 
-.rain .heavy:first-child {
+.rain.is-visible .heavy:first-child {
   -webkit-animation: rain .25s 300ms infinite normal both;
   -moz-animation: rain .25s 300ms infinite normal both;
   -ms-animation: rain .25s 300ms infinite normal both;
@@ -255,7 +267,7 @@ div.temp-toggle div.tempC:hover {
   left: 0px;
 }
 
-.rain .heavy:nth-child(2) {
+.rain.is-visible .heavy:nth-child(2) {
   -webkit-animation: rain .25s 600ms infinite normal both;
   -moz-animation: rain .25s 600ms infinite normal both;
   -ms-animation: rain .25s 600ms infinite normal both;
@@ -263,7 +275,7 @@ div.temp-toggle div.tempC:hover {
   left: 75px;
 }
 
-.rain .heavy:nth-child(3) {
+.rain.is-visible .heavy:nth-child(3) {
   -webkit-animation: rain .25s 900ms infinite normal both;
   -moz-animation: rain .25s 900ms infinite normal both;
   -ms-animation: rain .25s 900ms infinite normal both;
@@ -271,7 +283,7 @@ div.temp-toggle div.tempC:hover {
   left: 150px;
 }
 
-.rain .heavy:nth-child(4) {
+.rain.is-visible .heavy:nth-child(4) {
   -webkit-animation: rain .25s 1200ms infinite normal both;
   -moz-animation: rain .25s 1200ms infinite normal both;
   -ms-animation: rain .25s 1200ms infinite normal both;
@@ -279,7 +291,7 @@ div.temp-toggle div.tempC:hover {
   left: 225px;
 }
 
-.rain .heavy:nth-child(5) {
+.rain.is-visible .heavy:nth-child(5) {
   -webkit-animation: rain .25s 1500ms infinite normal both;
   -moz-animation: rain .25s 1500ms infinite normal both;
   -ms-animation: rain .25s 1500ms infinite normal both;
@@ -324,7 +336,7 @@ div.temp-toggle div.tempC:hover {
 }
 
 
-#snow .flake:first-child {
+#snow.is-visible .flake:first-child {
   -webkit-animation: fall .75s linear 800ms infinite both;
   -moz-animation: fall .75s linear 800ms infinite both;
   -ms-animation: fall .75s linear 800ms infinite both;
@@ -332,7 +344,7 @@ div.temp-toggle div.tempC:hover {
   left: 0px;
 }
 
-#snow .flake:nth-child(2) {
+#snow.is-visible .flake:nth-child(2) {
   -webkit-animation: fall 1s linear 100ms infinite both;
   -moz-animation: fall 1s linear 100ms infinite both;
   -ms-animation: fall 1s linear 100ms infinite both;
@@ -342,7 +354,7 @@ div.temp-toggle div.tempC:hover {
   left: 35px;
 }
 
-#snow .flake:nth-child(3) {
+#snow.is-visible .flake:nth-child(3) {
   -webkit-animation: fall-left 1.5s linear 600ms infinite both;
   -moz-animation: fall-left 1.5s linear 600ms infinite both;
   -ms-animation: fall-left 1.5s linear 600ms infinite both;
@@ -350,7 +362,7 @@ div.temp-toggle div.tempC:hover {
   left: 75px;
 }
 
-#snow .flake:nth-child(4) {
+#snow.is-visible .flake:nth-child(4) {
   -webkit-animation: fall .85s linear 400ms infinite both;
   -moz-animation: fall .85s linear 400ms infinite both;
   -ms-animation: fall .85s linear 400ms infinite both;
@@ -360,7 +372,7 @@ div.temp-toggle div.tempC:hover {
   left: 125px;
 }
 
-#snow .flake:nth-child(5) {
+#snow.is-visible .flake:nth-child(5) {
   -webkit-animation: fall-left 1.75s linear 800ms infinite both;
   -moz-animation: fall-left 1.75s linear 800ms infinite both;
   -ms-animation: fall-left 1.75s linear 800ms infinite both;
@@ -370,7 +382,7 @@ div.temp-toggle div.tempC:hover {
   left: 165px;
 }
 
-#snow .flake:nth-child(6) {
+#snow.is-visible .flake:nth-child(6) {
   -webkit-animation: fall 1.25s linear 800ms infinite both;
   -moz-animation: fall 1.25s linear 800ms infinite both;
   -ms-animation: fall 1.25s linear 800ms infinite both;
@@ -380,7 +392,7 @@ div.temp-toggle div.tempC:hover {
   left: 190px;
 }
 
-#snow .flake:nth-child(7) {
+#snow.is-visible .flake:nth-child(7) {
   -webkit-animation: fall-left .75s linear 800ms infinite both;
   -moz-animation: fall-left .75s linear 800ms infinite both;
   -ms-animation: fall-left .75s linear 800ms infinite both;
@@ -390,7 +402,7 @@ div.temp-toggle div.tempC:hover {
   left: 240px;
 }
 
-#snow .flake:nth-child(8) {
+#snow.is-visible .flake:nth-child(8) {
   -webkit-animation: fall 1s linear 800ms infinite both;
   -moz-animation: fall 1s linear 800ms infinite both;
   -ms-animation: fall 1s linear 800ms infinite both;
@@ -466,14 +478,14 @@ div.temp-toggle div.tempC:hover {
   opacity: 0;
 }
 
-.bolts:first-child {
+.is-visible .bolts:first-child {
   -webkit-animation: flash 2s 300ms infinite normal both;
   -moz-animation: flash 2s 300ms infinite normal both;
   -ms-animation: flash 2s 300ms infinite normal both;
   animation: flash 2s 300ms infinite normal both;
 }
 
-.bolts:nth-child(2) {
+.is-visible .bolts:nth-child(2) {
   -webkit-animation: flash 1.5s 800ms infinite normal both;
   -moz-animation: flash 1.5s 800ms infinite normal both;
   -ms-animation: flash 1.5s 800ms infinite normal both;
@@ -502,22 +514,22 @@ div.temp-toggle div.tempC:hover {
 
 /*** EARS ANIMATION ***/
 
-#clear-night :nth-child(3),
-#few-clouds-night .ears:nth-last-of-type(2) {
+#clear-night.is-visible :nth-child(3),
+#few-clouds-night.is-visible .ears:nth-last-of-type(2) {
   -webkit-animation: ears 2s 300ms infinite normal both;
   -moz-animation: ears 2s 300ms infinite normal both;
   -ms-animation: ears 2s 300ms infinite normal both;
   animation: ears 2s 300ms infinite normal both;
-  transform-origin: 0% 100%;
+  transform-origin: 60% 75%;
 }
 
-#clear-night :last-child,
-#few-clouds-night .ears:last-child {
+#clear-night.is-visible :last-child,
+#few-clouds-night.is-visible .ears:last-child {
   -webkit-animation: ears-opp 2s 300ms infinite normal both;
   -moz-animation: ears-opp 2s 300ms infinite normal both;
   -ms-animation: ears-opp 2s 300ms infinite normal both;
   animation: ears-opp 2s 300ms infinite normal both;
-  transform-origin: 0% 100%;
+  transform-origin: 52% 70%;
 }
 
 @keyframes ears {
@@ -577,7 +589,7 @@ div.temp-toggle div.tempC:hover {
 }
 
 /*** EARS ANIMATION ***/
-.dash-lines {
+.is-visible .dash-lines {
   stroke-dasharray: 100;
   animation: dash 5s linear infinite;
 }
@@ -594,10 +606,19 @@ div.temp-toggle div.tempC:hover {
   }
 }
 
-.wind-lines {
+.is-visible .wind-lines {
+  stroke: #8FB0B5;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: blow 5s linear forwards;
+  animation: blow 3s linear infinite;
+}
+
+.wind-lines:nth-of-type(2) {
+  animation-delay: .25s;
+}
+
+.wind-lines:nth-of-type(3) {
+  animation-delay: .5s;
 }
 
 @keyframes blow {

@@ -30,55 +30,57 @@ app.controller('w-NowController', ['$http', '$scope', '$compile', function($http
     this.convertTempUnit(temp);
   };
 
-  this.renderCondition = function(code, hour) {
-    let time;
-
-    if (hour >= 6 && hour <= 18) {
-      time = 'day';
-      $('body').css({
-        'background-color' : '#ADD8E6'
-      });
-    } else {
-      time = 'night';
-      $('body').css({
-        'background-color' : '#022078'
-      });
-    }
-
+  this.getCondition = function(code, time) {
+    let condition = `#clear-${time}`;
     // Use time to concat a string that renders the correct SVG
     if (code >= 300 && code < 400) {
-      this.renderSVG('#cloudy, #drizzle-rain');
+      return '#cloudy, #drizzle-rain';
     } else if ((code >= 200 && code < 300) || (code >= 500 && code < 600)) {
-      this.renderSVG('#dark-clouds, #drizzle-rain');
-      $('.drops').addClass('heavy');
+      condition = '#dark-clouds, #drizzle-rain';
       if (code >= 200 && code < 300) {
-        this.renderSVG('#lightning');
+        return `${condition}, #lightning`;
       }
+      return condition;
     } else if (code >= 600 && code < 700) {
-      this.renderSVG('#cloudy, #snow');
+      return '#cloudy, #snow';
     } else if (code >= 700 && code < 800) {
-      this.renderSVG('#atmosphere');
+      return '#atmosphere';
     } else if (code >= 800 && code < 900) {
       if (code === 800) {
-        this.renderSVG('#clear-' + time);
+        return condition;
       } else if (code === 801) {
-        this.renderSVG('#few-clouds-' + time);
+        return `#few-clouds-${time}`;
       } else if (code === 802) {
-        this.renderSVG('#scattered-clouds');
+        return '#scattered-clouds';
       } else if (code === 803 || code === 804) {
-        this.renderSVG('#cloudy');
+        return '#cloudy';
       }
+      return condition;
     } else if (code >= 900 && code < 1000) {
       if (code === 900 || code === 902 || code >= 960 && code <= 962) {
-        this.renderSVG('#extreme-storm');
+        return '#extreme-storm';
       } else if (code === 905 || code >= 956 && code <= 959) {
-        this.renderSVG('#windy');
+        return '#windy';
       }
-    };
+      return condition;
+    }
+    return condition;
+  }
+
+  this.renderCondition = function(code, hour) {
+    const time = hour >= 6 && hour <= 18 ? 'day' : 'night';
+    const condition = this.getCondition(code, time);
+
+    if (condition.includes('#dark-clouds')) {
+      $('.drops').addClass('heavy');
+    }
+
+    this.renderSVG(condition);
+    $('body').css({ 'background-color': time === 'day' ? '#ADD8E6' : '#022078' });
   };
 
   this.renderSVG = function(condition) {
-    $(condition).css({ 'display' : 'block' });
+    $(condition).addClass('is-visible');
   };
 
   this.convertTempUnit = function(temp) {
